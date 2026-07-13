@@ -1,0 +1,18 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"printWidth": 80,
+	"tabWidth": 2,
+	"useTabs": true,
+	"semi": false,
+	"singleQuote": false,
+	"trailingComma": "all",
+	"ignorePatterns": [
+		"**/routeTree.gen.ts",
+		"**/convex/_generated/**",
+		"**/.output/**",
+		"**/dist/**",
+		"**/node_modules/**",
+		"**/src/styles.css",
+		"**/pnpm-lock.yaml"
+	]
+}

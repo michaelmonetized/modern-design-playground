@@ -1,0 +1,8 @@
+# pnpm v11+ reads project settings from this file (not package.json#pnpm).
+allowBuilds:
+  "@clerk/shared": true
+  "@sentry/cli": true
+  core-js: true
+  esbuild: true
+  fsevents: true
+  lightningcss: true

@@ -1,34 +1,33 @@
 {
-  "projectName": "modern-design-playground",
-  "mode": "file-router",
-  "typescript": true,
-  "packageManager": "npm",
-  "includeExamples": true,
-  "tailwind": true,
-  "addOnOptions": {},
-  "envVarValues": {
-    "VITE_CLERK_PUBLISHABLE_KEY": "pk_test_bmVhdC1wbGF0eXB1cy03Mi5jbGVyay5hY2NvdW50cy5kZXYk",
-    "CONVEX_DEPLOYMENT": "prestigious-manatee-106",
-    "VITE_CONVEX_URL": "https://prestigious-manatee-106.convex.cloud/"
-  },
-  "git": true,
-  "install": true,
-  "routerOnly": false,
-  "version": 1,
-  "framework": "react",
-  "chosenAddOns": [
-    "biome",
-    "nitro",
-    "clerk",
-    "convex",
-    "sentry",
-    "compiler",
-    "form",
-    "shadcn",
-    "store",
-    "posthog",
-    "tanstack-query",
-    "tRPC",
-    "t3env"
-  ]
+	"projectName": "modern-design-playground",
+	"mode": "file-router",
+	"typescript": true,
+	"packageManager": "pnpm",
+	"includeExamples": true,
+	"tailwind": true,
+	"addOnOptions": {},
+	"envVarValues": {
+		"VITE_CLERK_PUBLISHABLE_KEY": "pk_test_bmVhdC1wbGF0eXB1cy03Mi5jbGVyay5hY2NvdW50cy5kZXYk",
+		"CONVEX_DEPLOYMENT": "prestigious-manatee-106",
+		"VITE_CONVEX_URL": "https://prestigious-manatee-106.convex.cloud/"
+	},
+	"git": true,
+	"install": true,
+	"routerOnly": false,
+	"version": 1,
+	"framework": "react",
+	"chosenAddOns": [
+		"nitro",
+		"clerk",
+		"convex",
+		"sentry",
+		"compiler",
+		"form",
+		"shadcn",
+		"store",
+		"posthog",
+		"tanstack-query",
+		"tRPC",
+		"t3env"
+	]
 }
