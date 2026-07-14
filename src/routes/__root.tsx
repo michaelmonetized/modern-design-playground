@@ -6,8 +6,6 @@ import {
 import Footer from "../components/Footer"
 import Header from "../components/Header"
 
-import ClerkProvider from "../integrations/clerk/provider"
-
 import ConvexProvider from "../integrations/convex/provider"
 
 import PostHogProvider from "../integrations/posthog/provider"
@@ -32,18 +30,16 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 
 function RootLayout() {
 	return (
-		<ClerkProvider>
-			<ConvexProvider>
-				<PostHogProvider>
-					<TooltipProvider>
-						<AppChrome>
-							<Outlet />
-						</AppChrome>
-						<Toaster />
-					</TooltipProvider>
-				</PostHogProvider>
-			</ConvexProvider>
-		</ClerkProvider>
+		<ConvexProvider>
+			<PostHogProvider>
+				<TooltipProvider>
+					<AppChrome>
+						<Outlet />
+					</AppChrome>
+					<Toaster />
+				</TooltipProvider>
+			</PostHogProvider>
+		</ConvexProvider>
 	)
 }
 

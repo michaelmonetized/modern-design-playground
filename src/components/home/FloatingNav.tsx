@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router"
-import ClerkHeader from "../../integrations/clerk/header-user"
 import ThemeToggle from "../ThemeToggle"
 import { Magnetic } from "./Magnetic"
 
@@ -42,9 +41,9 @@ export function FloatingNav() {
 				</Link>
 				<div className="ml-1 flex items-center gap-2 border-l border-white/10 pl-2 sm:pl-3">
 					<ThemeToggle />
-					<ClerkHeader />
 				</div>
 			</nav>
 		</header>
 	)
 }
+

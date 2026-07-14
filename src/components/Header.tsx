@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router"
-import ClerkHeader from "../integrations/clerk/header-user.tsx"
 import ThemeToggle from "./ThemeToggle"
 
 export default function Header() {
@@ -25,7 +24,6 @@ export default function Header() {
 
 				<div className="ml-auto flex items-center gap-2">
 					<ThemeToggle />
-					<ClerkHeader />
 				</div>
 			</nav>
 		</header>

@@ -11,8 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LandingsIndexRouteImport } from './routes/landings/index'
-import { Route as SignUpSplatRouteImport } from './routes/sign-up.$'
-import { Route as SignInSplatRouteImport } from './routes/sign-in.$'
 import { Route as LandingsSlugRouteImport } from './routes/landings/$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -25,16 +23,6 @@ const LandingsIndexRoute = LandingsIndexRouteImport.update({
   path: '/landings/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SignUpSplatRoute = SignUpSplatRouteImport.update({
-  id: '/sign-up/$',
-  path: '/sign-up/$',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SignInSplatRoute = SignInSplatRouteImport.update({
-  id: '/sign-in/$',
-  path: '/sign-in/$',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const LandingsSlugRoute = LandingsSlugRouteImport.update({
   id: '/landings/$slug',
   path: '/landings/$slug',
@@ -44,45 +32,30 @@ const LandingsSlugRoute = LandingsSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/landings/$slug': typeof LandingsSlugRoute
-  '/sign-in/$': typeof SignInSplatRoute
-  '/sign-up/$': typeof SignUpSplatRoute
   '/landings/': typeof LandingsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/landings/$slug': typeof LandingsSlugRoute
-  '/sign-in/$': typeof SignInSplatRoute
-  '/sign-up/$': typeof SignUpSplatRoute
   '/landings': typeof LandingsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/landings/$slug': typeof LandingsSlugRoute
-  '/sign-in/$': typeof SignInSplatRoute
-  '/sign-up/$': typeof SignUpSplatRoute
   '/landings/': typeof LandingsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    '/' | '/landings/$slug' | '/sign-in/$' | '/sign-up/$' | '/landings/'
+  fullPaths: '/' | '/landings/$slug' | '/landings/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/landings/$slug' | '/sign-in/$' | '/sign-up/$' | '/landings'
-  id:
-    | '__root__'
-    | '/'
-    | '/landings/$slug'
-    | '/sign-in/$'
-    | '/sign-up/$'
-    | '/landings/'
+  to: '/' | '/landings/$slug' | '/landings'
+  id: '__root__' | '/' | '/landings/$slug' | '/landings/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LandingsSlugRoute: typeof LandingsSlugRoute
-  SignInSplatRoute: typeof SignInSplatRoute
-  SignUpSplatRoute: typeof SignUpSplatRoute
   LandingsIndexRoute: typeof LandingsIndexRoute
 }
 
@@ -102,20 +75,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LandingsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/sign-up/$': {
-      id: '/sign-up/$'
-      path: '/sign-up/$'
-      fullPath: '/sign-up/$'
-      preLoaderRoute: typeof SignUpSplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sign-in/$': {
-      id: '/sign-in/$'
-      path: '/sign-in/$'
-      fullPath: '/sign-in/$'
-      preLoaderRoute: typeof SignInSplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/landings/$slug': {
       id: '/landings/$slug'
       path: '/landings/$slug'
@@ -129,8 +88,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LandingsSlugRoute: LandingsSlugRoute,
-  SignInSplatRoute: SignInSplatRoute,
-  SignUpSplatRoute: SignUpSplatRoute,
   LandingsIndexRoute: LandingsIndexRoute,
 }
 export const routeTree = rootRouteImport

@@ -36,7 +36,7 @@ export const GALLERY: GalleryItem[] = [
 		src: MEDIA.uncapHome,
 		blurb:
 			"A developer social surface where repository gravity meets cinematic product UI. Scroll as navigation; systems as story.",
-		stack: ["TanStack Start", "Convex", "Clerk", "Catppuccin"],
+		stack: ["TanStack Start", "Convex", "Catppuccin"],
 		year: "2025",
 	},
 	{
