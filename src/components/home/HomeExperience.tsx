@@ -1,11 +1,19 @@
+import { Suspense, lazy } from "react"
 import { ClientOnly } from "./ClientOnly"
-import { Chapters } from "./Chapters"
-import { CursorTrail } from "./CursorTrail"
 import { FloatingNav } from "./FloatingNav"
 import { GrainOverlay } from "./GrainOverlay"
 import { ScrollProgress } from "./ScrollProgress"
 import { SmoothScroll } from "./SmoothScroll"
-import { Stage } from "./Stage"
+
+// Code-split the heavy modules so Three.js / GSAP / postprocessing
+// don't bloat the initial bundle in CSR mode.
+const Stage = lazy(() => import("./Stage").then((m) => ({ default: m.Stage })))
+const Chapters = lazy(
+	() => import("./Chapters").then((m) => ({ default: m.Chapters })),
+)
+const CursorTrail = lazy(
+	() => import("./CursorTrail").then((m) => ({ default: m.CursorTrail })),
+)
 
 export function HomeExperience() {
 	return (
@@ -81,8 +89,10 @@ export function HomeExperience() {
 						</div>
 					}
 				>
-					<Stage />
-					<CursorTrail />
+					<Suspense>
+						<Stage />
+						<CursorTrail />
+					</Suspense>
 				</ClientOnly>
 				<GrainOverlay />
 				<ScrollProgress />
@@ -90,7 +100,9 @@ export function HomeExperience() {
 
 				{/* DOM is the score; WebGL is the orchestra */}
 				<div className="relative z-10">
-					<Chapters />
+					<Suspense>
+						<Chapters />
+					</Suspense>
 				</div>
 			</div>
 		</SmoothScroll>
